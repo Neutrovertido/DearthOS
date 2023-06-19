@@ -52,7 +52,7 @@ class Ui_NoteWindow(object):
 
     def retranslateUi(self, NoteWindow):
         _translate = QtCore.QCoreApplication.translate
-        NoteWindow.setWindowTitle(_translate("NoteWindow", "MainWindow"))
+        NoteWindow.setWindowTitle(_translate("NoteWindow", "Notepad"))
         self.menuFile.setTitle(_translate("NoteWindow", "File"))
         self.menuAbout.setTitle(_translate("NoteWindow", "About"))
         self.actionExit.setText(_translate("NoteWindow", "Open"))
