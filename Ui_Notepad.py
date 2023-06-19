@@ -82,6 +82,6 @@ class Ui_NoteWindow(object):
     def about(self, Note):
         msg = QMessageBox()
         msg.setWindowTitle("Acerca De")
-        msg.setText("Diseñado por James R. Cabrera\nProyecto SO I UJCV\n2023")
+        msg.setText("Diseñado por James R. Cabrera\nProyecto SO I UJCV\n© 2023")
         msg.setIcon(QMessageBox.Information)
         x = msg.exec_()
