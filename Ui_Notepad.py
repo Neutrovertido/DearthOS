@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 
 
 class Ui_NoteWindow(object):
@@ -40,15 +41,19 @@ class Ui_NoteWindow(object):
         self.actionSave_As.setObjectName("actionSave_As")
         self.actionExit = QtWidgets.QAction(NoteWindow)
         self.actionExit.setObjectName("actionExit")
+        self.actionAbout = QtWidgets.QAction(NoteWindow)
+        self.actionAbout.setObjectName("actionAbout")
         self.menuFile.addAction(self.actionOpen)
         self.menuFile.addAction(self.actionSave_As)
         self.menuFile.addSeparator()
         self.menuFile.addAction(self.actionExit)
+        self.menuAbout.addAction(self.actionAbout)
         self.menubar.addAction(self.menuFile.menuAction())
         self.menubar.addAction(self.menuAbout.menuAction())
 
         self.actionSave_As.triggered.connect(self.saveAs)
         self.actionOpen.triggered.connect(self.openFile)
+        self.actionAbout.triggered.connect(self.about)
 
         self.retranslateUi(NoteWindow)
         QtCore.QMetaObject.connectSlotsByName(NoteWindow)
@@ -57,10 +62,11 @@ class Ui_NoteWindow(object):
         _translate = QtCore.QCoreApplication.translate
         NoteWindow.setWindowTitle(_translate("NoteWindow", "Notepad"))
         self.menuFile.setTitle(_translate("NoteWindow", "File"))
-        self.menuAbout.setTitle(_translate("NoteWindow", "About"))
+        self.menuAbout.setTitle(_translate("NoteWindow", "Help"))
         self.actionOpen.setText(_translate("NoteWindow", "Open"))
         self.actionSave_As.setText(_translate("NoteWindow", "Save As"))
         self.actionExit.setText(_translate("NoteWindow", "Exit"))
+        self.actionAbout.setText(_translate("NoteWindow", "About"))
 
     def saveAs(self, Note):
         filename = QtWidgets.QFileDialog.getSaveFileName()
@@ -72,3 +78,10 @@ class Ui_NoteWindow(object):
         filename = QtWidgets.QFileDialog.getOpenFileName()
         f = open(filename[0], 'r')
         self.textEdit.setText(f.read())
+
+    def about(self, Note):
+        msg = QMessageBox()
+        msg.setWindowTitle("Acerca De")
+        msg.setText("Diseñado por James R. Cabrera\nProyecto SO I UJCV\n2023")
+        msg.setIcon(QMessageBox.Information)
+        x = msg.exec_()
