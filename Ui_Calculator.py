@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 
 
 class Ui_CalcWindow(object):
@@ -144,6 +145,8 @@ class Ui_CalcWindow(object):
         self.menuAbout.addAction(self.actionAbout)
         self.menubar.addAction(self.menuAbout.menuAction())
 
+        self.menuAbout.triggered.connect(self.about)
+
         self.retranslateUi(CalcWindow)
         QtCore.QMetaObject.connectSlotsByName(CalcWindow)
 
@@ -168,3 +171,10 @@ class Ui_CalcWindow(object):
         self.bBor.setText(_translate("CalcWindow", "⌫"))
         self.menuAbout.setTitle(_translate("CalcWindow", "About"))
         self.actionAbout.setText(_translate("CalcWindow", "About"))
+
+    def about(self, Note):
+        msg = QMessageBox()
+        msg.setWindowTitle("Acerca De")
+        msg.setText("Diseñado por James R. Cabrera\nProyecto SO I UJCV\n© 2023")
+        msg.setIcon(QMessageBox.Information)
+        x = msg.exec_()
