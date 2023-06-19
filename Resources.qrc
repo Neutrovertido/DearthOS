@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="Main">
+    <file>img/calculator.png</file>
+    <file>img/notepad.png</file>
+    <file>img/bg.png</file>
+  </qresource>
+</RCC>
