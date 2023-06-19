@@ -164,4 +164,3 @@ class Ui_CalcWindow(object):
         self.bIgu.setText(_translate("CalcWindow", "="))
         self.bBor.setText(_translate("CalcWindow", "⌫"))
         self.menuAbout.setTitle(_translate("CalcWindow", "About"))
-import Resources_rc
