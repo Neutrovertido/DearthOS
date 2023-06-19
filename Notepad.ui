@@ -33,10 +33,10 @@
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionExit"/>
+    <addaction name="actionOpen"/>
     <addaction name="actionSave_As"/>
     <addaction name="separator"/>
-    <addaction name="actionExit_2"/>
+    <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
@@ -47,7 +47,7 @@
    <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionExit">
+  <action name="actionOpen">
    <property name="text">
     <string>Open</string>
    </property>
@@ -57,7 +57,7 @@
     <string>Save As</string>
    </property>
   </action>
-  <action name="actionExit_2">
+  <action name="actionExit">
    <property name="text">
     <string>Exit</string>
    </property>
