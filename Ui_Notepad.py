@@ -47,6 +47,9 @@ class Ui_NoteWindow(object):
         self.menubar.addAction(self.menuFile.menuAction())
         self.menubar.addAction(self.menuAbout.menuAction())
 
+        self.actionSave_As.triggered.connect(self.saveAs)
+        self.actionOpen.triggered.connect(self.openFile)
+
         self.retranslateUi(NoteWindow)
         QtCore.QMetaObject.connectSlotsByName(NoteWindow)
 
@@ -58,3 +61,14 @@ class Ui_NoteWindow(object):
         self.actionOpen.setText(_translate("NoteWindow", "Open"))
         self.actionSave_As.setText(_translate("NoteWindow", "Save As"))
         self.actionExit.setText(_translate("NoteWindow", "Exit"))
+
+    def saveAs(self, Note):
+        filename = QtWidgets.QFileDialog.getSaveFileName()
+        f = open(filename[0], 'w')
+        f.write(self.textEdit.toPlainText())
+        f.close()
+
+    def openFile(self, Note):
+        filename = QtWidgets.QFileDialog.getOpenFileName()
+        f = open(filename[0], 'r')
+        self.textEdit.setText(f.read())
