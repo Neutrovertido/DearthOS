@@ -128,7 +128,7 @@ class Ui_CalcWindow(object):
         self.menubar.setGeometry(QtCore.QRect(0, 0, 330, 34))
         self.menubar.setObjectName("menubar")
         self.menuAbout = QtWidgets.QMenu(self.menubar)
-        self.menuAbout.setGeometry(QtCore.QRect(500, 300, 156, 64))
+        self.menuAbout.setGeometry(QtCore.QRect(478, 310, 156, 92))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -139,6 +139,9 @@ class Ui_CalcWindow(object):
         self.statusbar = QtWidgets.QStatusBar(CalcWindow)
         self.statusbar.setObjectName("statusbar")
         CalcWindow.setStatusBar(self.statusbar)
+        self.actionAbout = QtWidgets.QAction(CalcWindow)
+        self.actionAbout.setObjectName("actionAbout")
+        self.menuAbout.addAction(self.actionAbout)
         self.menubar.addAction(self.menuAbout.menuAction())
 
         self.retranslateUi(CalcWindow)
@@ -164,3 +167,4 @@ class Ui_CalcWindow(object):
         self.bIgu.setText(_translate("CalcWindow", "="))
         self.bBor.setText(_translate("CalcWindow", "⌫"))
         self.menuAbout.setTitle(_translate("CalcWindow", "About"))
+        self.actionAbout.setText(_translate("CalcWindow", "About"))

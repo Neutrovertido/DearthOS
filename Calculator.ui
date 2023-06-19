@@ -348,10 +348,10 @@
    <widget class="QMenu" name="menuAbout">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>300</y>
+      <x>478</x>
+      <y>310</y>
       <width>156</width>
-      <height>64</height>
+      <height>92</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -363,10 +363,16 @@
     <property name="title">
      <string>About</string>
     </property>
+    <addaction name="actionAbout"/>
    </widget>
    <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
