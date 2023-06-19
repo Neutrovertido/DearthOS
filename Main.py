@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/home/james/Projects/DearthOS/Main.ui'
+# Form implementation generated from reading ui file 'Main.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -29,20 +29,20 @@ class Ui_MainWindow(object):
         self.item1L.setGeometry(QtCore.QRect(10, 80, 76, 22))
         self.item1L.setAlignment(QtCore.Qt.AlignCenter)
         self.item1L.setObjectName("item1L")
-        self.item1L_2 = QtWidgets.QLabel(self.centralwidget)
-        self.item1L_2.setGeometry(QtCore.QRect(10, 190, 81, 22))
-        self.item1L_2.setAlignment(QtCore.Qt.AlignCenter)
-        self.item1L_2.setObjectName("item1L_2")
-        self.item1_2 = QtWidgets.QLabel(self.centralwidget)
-        self.item1_2.setGeometry(QtCore.QRect(20, 120, 64, 64))
-        self.item1_2.setMaximumSize(QtCore.QSize(64, 64))
-        self.item1_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.item1_2.setAutoFillBackground(False)
-        self.item1_2.setText("")
-        self.item1_2.setPixmap(QtGui.QPixmap(":/Main/img/calculator.png"))
-        self.item1_2.setScaledContents(True)
-        self.item1_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
-        self.item1_2.setObjectName("item1_2")
+        self.item2L = QtWidgets.QLabel(self.centralwidget)
+        self.item2L.setGeometry(QtCore.QRect(10, 190, 81, 22))
+        self.item2L.setAlignment(QtCore.Qt.AlignCenter)
+        self.item2L.setObjectName("item2L")
+        self.item2 = QtWidgets.QLabel(self.centralwidget)
+        self.item2.setGeometry(QtCore.QRect(20, 120, 64, 64))
+        self.item2.setMaximumSize(QtCore.QSize(64, 64))
+        self.item2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.item2.setAutoFillBackground(False)
+        self.item2.setText("")
+        self.item2.setPixmap(QtGui.QPixmap(":/Main/img/calculator.png"))
+        self.item2.setScaledContents(True)
+        self.item2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.item2.setObjectName("item2")
         self.item1 = QtWidgets.QLabel(self.centralwidget)
         self.item1.setGeometry(QtCore.QRect(20, 10, 64, 64))
         self.item1.setMaximumSize(QtCore.QSize(64, 64))
@@ -57,6 +57,10 @@ class Ui_MainWindow(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
+        
+        # Modified
+        self.item2.mousePressEvent = self.openCalculator
+        self.item1.mousePressEvent = self.openNotepad
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -65,5 +69,27 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "DearthOS"))
         self.item1L.setText(_translate("MainWindow", "Notepad"))
-        self.item1L_2.setText(_translate("MainWindow", "Calculator"))
+        self.item2L.setText(_translate("MainWindow", "Calculator"))
+
+    def openNotepad(self, Main):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_NoteWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+    def openCalculator(self, Main):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_CalcWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
 import Resources_rc
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
