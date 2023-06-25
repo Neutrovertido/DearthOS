@@ -64,21 +64,21 @@ class Ui_LoginWindow(object):
         self.txtPass.setFont(font)
         self.txtPass.setEchoMode(QtWidgets.QLineEdit.Password)
         self.txtPass.setObjectName("txtPass")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(280, 470, 271, 81))
+        self.btnLogin = QtWidgets.QPushButton(self.centralwidget)
+        self.btnLogin.setGeometry(QtCore.QRect(280, 470, 271, 81))
         font = QtGui.QFont()
         font.setPointSize(32)
         font.setBold(True)
         font.setWeight(75)
-        self.pushButton.setFont(font)
-        self.pushButton.setFlat(False)
-        self.pushButton.setObjectName("pushButton")
+        self.btnLogin.setFont(font)
+        self.btnLogin.setFlat(False)
+        self.btnLogin.setObjectName("btnLogin")
         LoginWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(LoginWindow)
         self.statusbar.setObjectName("statusbar")
         LoginWindow.setStatusBar(self.statusbar)
 
-        self.pushButton.clicked.connect(self.login)
+        self.btnLogin.clicked.connect(self.login)
 
         self.retranslateUi(LoginWindow)
         QtCore.QMetaObject.connectSlotsByName(LoginWindow)
@@ -88,7 +88,7 @@ class Ui_LoginWindow(object):
         LoginWindow.setWindowTitle(_translate("LoginWindow", "DearthOS Login"))
         self.lblUser.setText(_translate("LoginWindow", "User:"))
         self.lblPass.setText(_translate("LoginWindow", "Password:"))
-        self.pushButton.setText(_translate("LoginWindow", "Login"))
+        self.btnLogin.setText(_translate("LoginWindow", "Login"))
 
     def login(self, Login):
         if self.txtUser.text() == "Salieri" and self.txtPass.text() == "Sonata":
@@ -102,6 +102,9 @@ class Ui_LoginWindow(object):
             msg.setText("Username/Password incorrect!")
             msg.setIcon(QMessageBox.Critical)
             x = msg.exec_()
+
+        self.txtUser.setText("")
+        self.txtPass.setText("")
 import Resources_rc
 
 
