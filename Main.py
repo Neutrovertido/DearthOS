@@ -12,7 +12,6 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from Ui_Calculator import Ui_CalcWindow
 from Ui_Notepad import Ui_NoteWindow
 
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -29,10 +28,12 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.item1L = QtWidgets.QLabel(self.centralwidget)
         self.item1L.setGeometry(QtCore.QRect(10, 80, 76, 22))
+        self.item1L.setStyleSheet("color: #ffffff;")
         self.item1L.setAlignment(QtCore.Qt.AlignCenter)
         self.item1L.setObjectName("item1L")
         self.item2L = QtWidgets.QLabel(self.centralwidget)
         self.item2L.setGeometry(QtCore.QRect(10, 190, 81, 22))
+        self.item2L.setStyleSheet("color: #ffffff;")
         self.item2L.setAlignment(QtCore.Qt.AlignCenter)
         self.item2L.setObjectName("item2L")
         self.item2 = QtWidgets.QLabel(self.centralwidget)
@@ -59,7 +60,7 @@ class Ui_MainWindow(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-        
+
         # Modified
         self.item2.mousePressEvent = self.openCalculator
         self.item1.mousePressEvent = self.openNotepad
