@@ -15,9 +15,12 @@ from PyQt5.QtWidgets import QMessageBox
 class Ui_CalcWindow(object):
     def setupUi(self, CalcWindow):
         CalcWindow.setObjectName("CalcWindow")
-        CalcWindow.resize(330, 450)
-        CalcWindow.setMinimumSize(QtCore.QSize(330, 450))
-        CalcWindow.setMaximumSize(QtCore.QSize(330, 450))
+        CalcWindow.resize(330, 460)
+        CalcWindow.setMinimumSize(QtCore.QSize(330, 460))
+        CalcWindow.setMaximumSize(QtCore.QSize(330, 460))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/Main/img/dearth-logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        CalcWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(CalcWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.output = QtWidgets.QPlainTextEdit(self.centralwidget)
@@ -178,3 +181,5 @@ class Ui_CalcWindow(object):
         msg.setText("Diseñado por James R. Cabrera\nProyecto SO I UJCV\n© 2023")
         msg.setIcon(QMessageBox.Information)
         x = msg.exec_()
+
+import Resources_rc

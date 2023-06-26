@@ -7,23 +7,27 @@
     <x>0</x>
     <y>0</y>
     <width>330</width>
-    <height>450</height>
+    <height>460</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>330</width>
-    <height>450</height>
+    <height>460</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>330</width>
-    <height>450</height>
+    <height>460</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Calculator</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Resources.qrc">
+    <normaloff>:/Main/img/dearth-logo.png</normaloff>:/Main/img/dearth-logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPlainTextEdit" name="output">
@@ -374,6 +378,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
