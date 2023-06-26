@@ -16,6 +16,9 @@ class Ui_NoteWindow(object):
     def setupUi(self, NoteWindow):
         NoteWindow.setObjectName("NoteWindow")
         NoteWindow.resize(800, 600)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/Main/img/dearth-logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        NoteWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(NoteWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.centralwidget)
@@ -85,3 +88,5 @@ class Ui_NoteWindow(object):
         msg.setText("Diseñado por James R. Cabrera\nProyecto SO I UJCV\n© 2023")
         msg.setIcon(QMessageBox.Information)
         x = msg.exec_()
+        
+import Resources_rc
