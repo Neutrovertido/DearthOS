@@ -13,6 +13,7 @@ from PyQt5.QtCore import Qt
 from Ui_Calculator import Ui_CalcWindow
 from Ui_Notepad import Ui_NoteWindow
 
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -60,6 +61,36 @@ class Ui_MainWindow(object):
         self.item1.setScaledContents(True)
         self.item1.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.item1.setObjectName("item1")
+        self.itemZ = QtWidgets.QLabel(self.centralwidget)
+        self.itemZ.setGeometry(QtCore.QRect(1200, 570, 64, 64))
+        self.itemZ.setMaximumSize(QtCore.QSize(64, 64))
+        self.itemZ.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.itemZ.setAutoFillBackground(False)
+        self.itemZ.setText("")
+        self.itemZ.setPixmap(QtGui.QPixmap(":/Main/img/power.png"))
+        self.itemZ.setScaledContents(True)
+        self.itemZ.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.itemZ.setObjectName("itemZ")
+        self.itemZL = QtWidgets.QLabel(self.centralwidget)
+        self.itemZL.setGeometry(QtCore.QRect(1190, 640, 81, 22))
+        self.itemZL.setStyleSheet("color: #ffffff;")
+        self.itemZL.setAlignment(QtCore.Qt.AlignCenter)
+        self.itemZL.setObjectName("itemZL")
+        self.itemY = QtWidgets.QLabel(self.centralwidget)
+        self.itemY.setGeometry(QtCore.QRect(1200, 450, 64, 64))
+        self.itemY.setMaximumSize(QtCore.QSize(64, 64))
+        self.itemY.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.itemY.setAutoFillBackground(False)
+        self.itemY.setText("")
+        self.itemY.setPixmap(QtGui.QPixmap(":/Main/img/computer.png"))
+        self.itemY.setScaledContents(True)
+        self.itemY.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.itemY.setObjectName("itemY")
+        self.itemYL = QtWidgets.QLabel(self.centralwidget)
+        self.itemYL.setGeometry(QtCore.QRect(1190, 520, 81, 22))
+        self.itemYL.setStyleSheet("color: #ffffff;")
+        self.itemYL.setAlignment(QtCore.Qt.AlignCenter)
+        self.itemYL.setObjectName("itemYL")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -69,6 +100,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowFlag(Qt.FramelessWindowHint)
         self.item2.mousePressEvent = self.openCalculator
         self.item1.mousePressEvent = self.openNotepad
+        self.itemZ.mousePressEvent = self.logout
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -78,6 +110,8 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "DearthOS"))
         self.item1L.setText(_translate("MainWindow", "Notepad"))
         self.item2L.setText(_translate("MainWindow", "Calculator"))
+        self.itemZL.setText(_translate("MainWindow", "Log out"))
+        self.itemYL.setText(_translate("MainWindow", "About OS"))
 
     def openNotepad(self, Main):
         self.window = QtWidgets.QMainWindow()
@@ -92,7 +126,10 @@ class Ui_MainWindow(object):
         self.ui.setupUi(self.window)
         self.window.show()
 
-        self.window.show()
+    def logout(self, Main):
+        MainWindow.close()
+
+
 import Resources_rc
 
 

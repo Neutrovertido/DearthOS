@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="Main">
+    <file>img/computer.png</file>
+    <file>img/power.png</file>
     <file>img/dearth-logo.png</file>
     <file>img/calculator.png</file>
     <file>img/notepad.png</file>
