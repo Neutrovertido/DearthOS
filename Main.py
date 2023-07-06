@@ -16,6 +16,7 @@ from Ui_Notepad import Ui_NoteWindow
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+        self.MainWindow = MainWindow
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1280, 720)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
@@ -127,7 +128,7 @@ class Ui_MainWindow(object):
         self.window.show()
 
     def logout(self, Main):
-        MainWindow.close()
+        self.MainWindow.close()
 
 
 import Resources_rc
