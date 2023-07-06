@@ -12,6 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import Qt
 from Ui_Calculator import Ui_CalcWindow
 from Ui_Notepad import Ui_NoteWindow
+from Ui_AboutOS import Ui_SystemWindow
 
 
 class Ui_MainWindow(object):
@@ -101,6 +102,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowFlag(Qt.FramelessWindowHint)
         self.item2.mousePressEvent = self.openCalculator
         self.item1.mousePressEvent = self.openNotepad
+        self.itemY.mousePressEvent = self.openAboutOS
         self.itemZ.mousePressEvent = self.logout
 
         self.retranslateUi(MainWindow)
@@ -124,6 +126,12 @@ class Ui_MainWindow(object):
     def openCalculator(self, Main):
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_CalcWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+    def openAboutOS(self, Main):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_SystemWindow()
         self.ui.setupUi(self.window)
         self.window.show()
 
