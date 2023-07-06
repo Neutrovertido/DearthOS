@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtCore import Qt
 from Ui_Calculator import Ui_CalcWindow
 from Ui_Notepad import Ui_NoteWindow
 
@@ -65,6 +66,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         # Modified
+        MainWindow.setWindowFlag(Qt.FramelessWindowHint)
         self.item2.mousePressEvent = self.openCalculator
         self.item1.mousePressEvent = self.openNotepad
 
