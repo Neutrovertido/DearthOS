@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Main.ui'
+# Form implementation generated from reading ui file '/home/james/Projects/DearthOS/Main.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -13,6 +13,7 @@ from PyQt5.QtCore import Qt
 from Ui_Calculator import Ui_CalcWindow
 from Ui_Notepad import Ui_NoteWindow
 from Ui_AboutOS import Ui_SystemWindow
+from Ui_MusicPlayer import Ui_MusicWindow
 
 
 class Ui_MainWindow(object):
@@ -93,6 +94,21 @@ class Ui_MainWindow(object):
         self.itemYL.setStyleSheet("color: #ffffff;")
         self.itemYL.setAlignment(QtCore.Qt.AlignCenter)
         self.itemYL.setObjectName("itemYL")
+        self.item3 = QtWidgets.QLabel(self.centralwidget)
+        self.item3.setGeometry(QtCore.QRect(20, 230, 64, 64))
+        self.item3.setMaximumSize(QtCore.QSize(64, 64))
+        self.item3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.item3.setAutoFillBackground(False)
+        self.item3.setText("")
+        self.item3.setPixmap(QtGui.QPixmap(":/Main/img/music.png"))
+        self.item3.setScaledContents(True)
+        self.item3.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.item3.setObjectName("item3")
+        self.item3L = QtWidgets.QLabel(self.centralwidget)
+        self.item3L.setGeometry(QtCore.QRect(10, 300, 76, 22))
+        self.item3L.setStyleSheet("color: #ffffff;")
+        self.item3L.setAlignment(QtCore.Qt.AlignCenter)
+        self.item3L.setObjectName("item3L")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -102,6 +118,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowFlag(Qt.FramelessWindowHint)
         self.item2.mousePressEvent = self.openCalculator
         self.item1.mousePressEvent = self.openNotepad
+        self.item3.mousePressEvent = self.openMusic
         self.itemY.mousePressEvent = self.openAboutOS
         self.itemZ.mousePressEvent = self.logout
 
@@ -115,6 +132,7 @@ class Ui_MainWindow(object):
         self.item2L.setText(_translate("MainWindow", "Calculator"))
         self.itemZL.setText(_translate("MainWindow", "Log out"))
         self.itemYL.setText(_translate("MainWindow", "About OS"))
+        self.item3L.setText(_translate("MainWindow", "Music"))
 
     def openNotepad(self, Main):
         self.window = QtWidgets.QMainWindow()
@@ -126,6 +144,12 @@ class Ui_MainWindow(object):
     def openCalculator(self, Main):
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_CalcWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+    def openMusic(self, Main):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_MusicWindow()
         self.ui.setupUi(self.window)
         self.window.show()
 
