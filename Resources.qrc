@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="Main">
+    <file>img/image-viewer.png</file>
     <file>img/music.png</file>
     <file>img/computer.png</file>
     <file>img/power.png</file>
