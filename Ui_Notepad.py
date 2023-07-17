@@ -14,6 +14,7 @@ from PyQt5.QtWidgets import QMessageBox
 
 class Ui_NoteWindow(object):
     def setupUi(self, NoteWindow):
+        self.NoteWindow = NoteWindow
         NoteWindow.setObjectName("NoteWindow")
         NoteWindow.resize(800, 600)
         icon = QtGui.QIcon()
@@ -54,8 +55,10 @@ class Ui_NoteWindow(object):
         self.menubar.addAction(self.menuFile.menuAction())
         self.menubar.addAction(self.menuAbout.menuAction())
 
+        # Modified
         self.actionSave_As.triggered.connect(self.saveAs)
         self.actionOpen.triggered.connect(self.openFile)
+        self.actionExit.triggered.connect(self.exit)
         self.actionAbout.triggered.connect(self.about)
 
         self.retranslateUi(NoteWindow)
@@ -88,5 +91,9 @@ class Ui_NoteWindow(object):
         msg.setText("Diseñado por James R. Cabrera\nProyecto SO I UJCV\n© 2023")
         msg.setIcon(QMessageBox.Information)
         x = msg.exec_()
+
+    def exit (self, Note):
+        self.NoteWindow.close()
+        
         
 import Resources_rc

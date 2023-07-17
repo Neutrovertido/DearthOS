@@ -156,7 +156,6 @@ class Ui_MainWindow(object):
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_NoteWindow()
         self.ui.setupUi(self.window)
-        self.ui.actionExit.triggered.connect(self.window.close)
         self.window.show()
 
     def openCalculator(self, Main):
