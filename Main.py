@@ -15,6 +15,7 @@ from Ui_Notepad import Ui_NoteWindow
 from Ui_AboutOS import Ui_SystemWindow
 from Ui_MusicPlayer import Ui_MusicWindow
 from Ui_ImageViewer import Ui_ImageViewerWindow
+from Ui_Browser import Ui_BrowserWindow
 
 
 class Ui_MainWindow(object):
@@ -125,6 +126,21 @@ class Ui_MainWindow(object):
         self.item4.setScaledContents(True)
         self.item4.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.item4.setObjectName("item4")
+        self.item5 = QtWidgets.QLabel(self.centralwidget)
+        self.item5.setGeometry(QtCore.QRect(20, 450, 64, 64))
+        self.item5.setMaximumSize(QtCore.QSize(64, 64))
+        self.item5.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.item5.setAutoFillBackground(False)
+        self.item5.setText("")
+        self.item5.setPixmap(QtGui.QPixmap(":/Main/img/browser.png"))
+        self.item5.setScaledContents(True)
+        self.item5.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.item5.setObjectName("item5")
+        self.item5L = QtWidgets.QLabel(self.centralwidget)
+        self.item5L.setGeometry(QtCore.QRect(0, 520, 111, 22))
+        self.item5L.setStyleSheet("color: #ffffff;")
+        self.item5L.setAlignment(QtCore.Qt.AlignCenter)
+        self.item5L.setObjectName("item5L")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -136,6 +152,7 @@ class Ui_MainWindow(object):
         self.item1.mousePressEvent = self.openNotepad
         self.item3.mousePressEvent = self.openMusic
         self.item4.mousePressEvent = self.openImageViewer
+        self.item5.mousePressEvent = self.openBrowser
         self.itemY.mousePressEvent = self.openAboutOS
         self.itemZ.mousePressEvent = self.logout
 
@@ -151,6 +168,7 @@ class Ui_MainWindow(object):
         self.itemYL.setText(_translate("MainWindow", "About OS"))
         self.item3L.setText(_translate("MainWindow", "Music"))
         self.item4L.setText(_translate("MainWindow", "Image Viewer"))
+        self.item5L.setText(_translate("MainWindow", "Browser"))
     
     def openNotepad(self, Main):
         self.window = QtWidgets.QMainWindow()
@@ -173,6 +191,12 @@ class Ui_MainWindow(object):
     def openMusic(self, Main):
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_MusicWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+    def openBrowser(self, Main):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_BrowserWindow()
         self.ui.setupUi(self.window)
         self.window.show()
 
