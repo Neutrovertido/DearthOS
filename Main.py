@@ -16,6 +16,7 @@ from Ui_AboutOS import Ui_SystemWindow
 from Ui_MusicPlayer import Ui_MusicWindow
 from Ui_ImageViewer import Ui_ImageViewerWindow
 from Ui_Browser import Ui_BrowserWindow
+from Ui_DocumentViewer import Ui_DocumentViewerWindow
 
 
 class Ui_MainWindow(object):
@@ -38,11 +39,17 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.item1L = QtWidgets.QLabel(self.centralwidget)
         self.item1L.setGeometry(QtCore.QRect(10, 80, 76, 22))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.item1L.setFont(font)
         self.item1L.setStyleSheet("color: #ffffff;")
         self.item1L.setAlignment(QtCore.Qt.AlignCenter)
         self.item1L.setObjectName("item1L")
         self.item2L = QtWidgets.QLabel(self.centralwidget)
         self.item2L.setGeometry(QtCore.QRect(10, 190, 81, 22))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.item2L.setFont(font)
         self.item2L.setStyleSheet("color: #ffffff;")
         self.item2L.setAlignment(QtCore.Qt.AlignCenter)
         self.item2L.setObjectName("item2L")
@@ -78,6 +85,9 @@ class Ui_MainWindow(object):
         self.itemZ.setObjectName("itemZ")
         self.itemZL = QtWidgets.QLabel(self.centralwidget)
         self.itemZL.setGeometry(QtCore.QRect(1190, 640, 81, 22))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.itemZL.setFont(font)
         self.itemZL.setStyleSheet("color: #ffffff;")
         self.itemZL.setAlignment(QtCore.Qt.AlignCenter)
         self.itemZL.setObjectName("itemZL")
@@ -93,6 +103,9 @@ class Ui_MainWindow(object):
         self.itemY.setObjectName("itemY")
         self.itemYL = QtWidgets.QLabel(self.centralwidget)
         self.itemYL.setGeometry(QtCore.QRect(1190, 520, 81, 22))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.itemYL.setFont(font)
         self.itemYL.setStyleSheet("color: #ffffff;")
         self.itemYL.setAlignment(QtCore.Qt.AlignCenter)
         self.itemYL.setObjectName("itemYL")
@@ -108,11 +121,17 @@ class Ui_MainWindow(object):
         self.item3.setObjectName("item3")
         self.item3L = QtWidgets.QLabel(self.centralwidget)
         self.item3L.setGeometry(QtCore.QRect(10, 300, 76, 22))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.item3L.setFont(font)
         self.item3L.setStyleSheet("color: #ffffff;")
         self.item3L.setAlignment(QtCore.Qt.AlignCenter)
         self.item3L.setObjectName("item3L")
         self.item4L = QtWidgets.QLabel(self.centralwidget)
         self.item4L.setGeometry(QtCore.QRect(0, 410, 111, 22))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.item4L.setFont(font)
         self.item4L.setStyleSheet("color: #ffffff;")
         self.item4L.setAlignment(QtCore.Qt.AlignCenter)
         self.item4L.setObjectName("item4L")
@@ -138,9 +157,31 @@ class Ui_MainWindow(object):
         self.item5.setObjectName("item5")
         self.item5L = QtWidgets.QLabel(self.centralwidget)
         self.item5L.setGeometry(QtCore.QRect(0, 520, 111, 22))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.item5L.setFont(font)
         self.item5L.setStyleSheet("color: #ffffff;")
         self.item5L.setAlignment(QtCore.Qt.AlignCenter)
         self.item5L.setObjectName("item5L")
+        self.item6L = QtWidgets.QLabel(self.centralwidget)
+        self.item6L.setGeometry(QtCore.QRect(0, 630, 111, 22))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.item6L.setFont(font)
+        self.item6L.setStyleSheet("color: #ffffff;")
+        self.item6L.setScaledContents(False)
+        self.item6L.setAlignment(QtCore.Qt.AlignCenter)
+        self.item6L.setObjectName("item6L")
+        self.item6 = QtWidgets.QLabel(self.centralwidget)
+        self.item6.setGeometry(QtCore.QRect(20, 560, 64, 64))
+        self.item6.setMaximumSize(QtCore.QSize(64, 64))
+        self.item6.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.item6.setAutoFillBackground(False)
+        self.item6.setText("")
+        self.item6.setPixmap(QtGui.QPixmap(":/Main/img/document.png"))
+        self.item6.setScaledContents(True)
+        self.item6.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.item6.setObjectName("item6")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -153,6 +194,7 @@ class Ui_MainWindow(object):
         self.item3.mousePressEvent = self.openMusic
         self.item4.mousePressEvent = self.openImageViewer
         self.item5.mousePressEvent = self.openBrowser
+        self.item6.mousePressEvent = self.openDocViewer
         self.itemY.mousePressEvent = self.openAboutOS
         self.itemZ.mousePressEvent = self.logout
 
@@ -169,6 +211,7 @@ class Ui_MainWindow(object):
         self.item3L.setText(_translate("MainWindow", "Music"))
         self.item4L.setText(_translate("MainWindow", "Image Viewer"))
         self.item5L.setText(_translate("MainWindow", "Browser"))
+        self.item6L.setText(_translate("MainWindow", "Doc Viewer"))
     
     def openNotepad(self, Main):
         self.window = QtWidgets.QMainWindow()
@@ -197,6 +240,12 @@ class Ui_MainWindow(object):
     def openBrowser(self, Main):
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_BrowserWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+    def openDocViewer(self, Main):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_DocumentViewerWindow()
         self.ui.setupUi(self.window)
         self.window.show()
 

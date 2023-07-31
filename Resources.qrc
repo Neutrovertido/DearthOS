@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="Main">
+    <file>img/document.png</file>
     <file>img/browser.png</file>
     <file>img/image-viewer.png</file>
     <file>img/music.png</file>
