@@ -17,6 +17,7 @@ from Ui_MusicPlayer import Ui_MusicWindow
 from Ui_ImageViewer import Ui_ImageViewerWindow
 from Ui_Browser import Ui_BrowserWindow
 from Ui_DocumentViewer import Ui_DocumentViewerWindow
+from Ui_Camera import Ui_CameraWindow
 
 
 class Ui_MainWindow(object):
@@ -182,6 +183,25 @@ class Ui_MainWindow(object):
         self.item6.setScaledContents(True)
         self.item6.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.item6.setObjectName("item6")
+        self.item7L = QtWidgets.QLabel(self.centralwidget)
+        self.item7L.setGeometry(QtCore.QRect(90, 80, 111, 22))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.item7L.setFont(font)
+        self.item7L.setStyleSheet("color: #ffffff;")
+        self.item7L.setScaledContents(False)
+        self.item7L.setAlignment(QtCore.Qt.AlignCenter)
+        self.item7L.setObjectName("item7L")
+        self.item7 = QtWidgets.QLabel(self.centralwidget)
+        self.item7.setGeometry(QtCore.QRect(110, 10, 64, 64))
+        self.item7.setMaximumSize(QtCore.QSize(64, 64))
+        self.item7.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.item7.setAutoFillBackground(False)
+        self.item7.setText("")
+        self.item7.setPixmap(QtGui.QPixmap(":/Main/img/camera.png"))
+        self.item7.setScaledContents(True)
+        self.item7.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.item7.setObjectName("item7")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -195,6 +215,7 @@ class Ui_MainWindow(object):
         self.item4.mousePressEvent = self.openImageViewer
         self.item5.mousePressEvent = self.openBrowser
         self.item6.mousePressEvent = self.openDocViewer
+        self.item7.mousePressEvent = self.openCamera
         self.itemY.mousePressEvent = self.openAboutOS
         self.itemZ.mousePressEvent = self.logout
 
@@ -212,6 +233,7 @@ class Ui_MainWindow(object):
         self.item4L.setText(_translate("MainWindow", "Image Viewer"))
         self.item5L.setText(_translate("MainWindow", "Browser"))
         self.item6L.setText(_translate("MainWindow", "Doc Viewer"))
+        self.item7L.setText(_translate("MainWindow", "Camera"))
     
     def openNotepad(self, Main):
         self.window = QtWidgets.QMainWindow()
@@ -248,6 +270,9 @@ class Ui_MainWindow(object):
         self.ui = Ui_DocumentViewerWindow()
         self.ui.setupUi(self.window)
         self.window.show()
+
+    def openCamera(self, Main):
+        Ui_CameraWindow()
 
     def openAboutOS(self, Main):
         self.window = QtWidgets.QMainWindow()
