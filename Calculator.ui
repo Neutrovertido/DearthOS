@@ -30,24 +30,6 @@
     <normaloff>:/Main/img/calculator.png</normaloff>:/Main/img/calculator.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPlainTextEdit" name="output">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>311</width>
-      <height>87</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>24</pointsize>
-     </font>
-    </property>
-    <property name="readOnly">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QPushButton" name="b7">
     <property name="geometry">
      <rect>
@@ -337,6 +319,24 @@
     </property>
     <property name="text">
      <string>⌫</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="output">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>311</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>32</pointsize>
+     </font>
     </property>
    </widget>
   </widget>
