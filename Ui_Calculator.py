@@ -150,6 +150,24 @@ class Ui_CalcWindow(object):
 
         self.menuAbout.triggered.connect(self.about)
 
+        self.b0.clicked.connect(self.zero)
+        self.b1.clicked.connect(self.one)
+        self.b2.clicked.connect(self.two)
+        self.b3.clicked.connect(self.three)
+        self.b4.clicked.connect(self.four)
+        self.b5.clicked.connect(self.five)
+        self.b6.clicked.connect(self.six)
+        self.b7.clicked.connect(self.seven)
+        self.b8.clicked.connect(self.eight)
+        self.b9.clicked.connect(self.nine)
+
+        self.bSum.clicked.connect(self.plus)
+        self.bRes.clicked.connect(self.minus)
+        self.bMul.clicked.connect(self.times)
+        self.bDiv.clicked.connect(self.divide)
+        self.bBor.clicked.connect(self.erase)
+        self.bIgu.clicked.connect(self.equal)
+
         self.retranslateUi(CalcWindow)
         QtCore.QMetaObject.connectSlotsByName(CalcWindow)
 
@@ -174,6 +192,74 @@ class Ui_CalcWindow(object):
         self.bBor.setText(_translate("CalcWindow", "⌫"))
         self.menuAbout.setTitle(_translate("CalcWindow", "About"))
         self.actionAbout.setText(_translate("CalcWindow", "About"))
+
+    def equal(self, Calc):
+        eq = self.output.text()
+        try:
+            self.output.setText(str(eval(eq)))
+        except:
+            self.output.setText("")
+
+    def erase(self, Calc):
+        prev = self.output.text()
+        new = prev[:len(prev) - 1]
+        self.output.setText(new)
+
+    def plus(self, Calc):
+        prev = self.output.text()
+        self.output.setText(prev + "+")
+
+    def minus(self, Calc):
+        prev = self.output.text()
+        self.output.setText(prev + "-")
+    
+    def times(self, Calc):
+        prev = self.output.text()
+        self.output.setText(prev + "*")
+
+    def divide(self, Calc):
+        prev = self.output.text()
+        self.output.setText(prev + "/")
+
+    def zero(self, Calc):
+        prev = self.output.text()
+        self.output.setText(prev + "0")
+
+    def one(self, Calc):
+        prev = self.output.text()
+        self.output.setText(prev + "1")
+
+    def two(self, Calc):
+        prev = self.output.text()
+        self.output.setText(prev + "2")
+    
+    def three(self, Calc):
+        prev = self.output.text()
+        self.output.setText(prev + "3")
+
+    def four(self, Calc):
+        prev = self.output.text()
+        self.output.setText(prev + "4")
+
+    def five(self, Calc):
+        prev = self.output.text()
+        self.output.setText(prev + "5")
+
+    def six(self, Calc):
+        prev = self.output.text()
+        self.output.setText(prev + "6")
+
+    def seven(self, Calc):
+        prev = self.output.text()
+        self.output.setText(prev + "7")
+
+    def eight(self, Calc):
+        prev = self.output.text()
+        self.output.setText(prev + "8")
+
+    def nine(self, Calc):
+        prev = self.output.text()
+        self.output.setText(prev + "9")
 
     def about(self, Calc):
         msg = QMessageBox()
