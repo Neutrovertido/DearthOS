@@ -15,11 +15,11 @@ from PyQt5.QtWidgets import QMessageBox
 class Ui_CalcWindow(object):
     def setupUi(self, CalcWindow):
         CalcWindow.setObjectName("CalcWindow")
-        CalcWindow.resize(330, 460)
-        CalcWindow.setMinimumSize(QtCore.QSize(330, 460))
-        CalcWindow.setMaximumSize(QtCore.QSize(330, 460))
+        CalcWindow.resize(330, 474)
+        CalcWindow.setMinimumSize(QtCore.QSize(330, 474))
+        CalcWindow.setMaximumSize(QtCore.QSize(330, 474))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/Main/img/dearth-logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/Main/img/calculator.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         CalcWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(CalcWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -129,10 +129,10 @@ class Ui_CalcWindow(object):
         self.bBor.setObjectName("bBor")
         CalcWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(CalcWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 330, 34))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 330, 23))
         self.menubar.setObjectName("menubar")
         self.menuAbout = QtWidgets.QMenu(self.menubar)
-        self.menuAbout.setGeometry(QtCore.QRect(478, 310, 156, 92))
+        self.menuAbout.setGeometry(QtCore.QRect(478, 310, 146, 72))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -175,7 +175,7 @@ class Ui_CalcWindow(object):
         self.menuAbout.setTitle(_translate("CalcWindow", "About"))
         self.actionAbout.setText(_translate("CalcWindow", "About"))
 
-    def about(self, Note):
+    def about(self, Calc):
         msg = QMessageBox()
         msg.setWindowTitle("Acerca De")
         msg.setText("Diseñado por James R. Cabrera\nProyecto SO I UJCV\n© 2023")
