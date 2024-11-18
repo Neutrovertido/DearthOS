@@ -57,4 +57,4 @@ If you'd like to contribute to DearthOS, feel free to fork the repository, make 
 ## Acknowledgements
 
 - PyQt5 for the GUI framework
-- Python for the development of the system prototype
+- Python for the programming language and libraries
